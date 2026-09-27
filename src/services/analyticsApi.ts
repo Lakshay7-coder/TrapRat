@@ -1,0 +1,1 @@
+import api from './api'; export const getAnalytics=(params={})=>api.get('/analytics',{params});

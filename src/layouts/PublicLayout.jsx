@@ -1,0 +1,1 @@
+import React from "react"; import {Outlet,Link} from "react-router-dom"; export default function PublicLayout(){return <><header className="publicNav"><Link to="/" className="brand"><span>TR</span> TRAPRAT</Link><Link className="btn primary" to="/login">Open Demo</Link></header><Outlet/></>}

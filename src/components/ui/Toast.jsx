@@ -1,0 +1,1 @@
+export default function Toast({text}){return text?<div className="toast">{text}</div>:null}

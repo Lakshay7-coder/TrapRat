@@ -1,0 +1,1 @@
+import {useDemo} from "../context/DemoContext"; import {searchTrainees} from "../controllers/traineeController"; export function useTrainees(q=""){const {data}=useDemo();return searchTrainees(data.trainees,q)}

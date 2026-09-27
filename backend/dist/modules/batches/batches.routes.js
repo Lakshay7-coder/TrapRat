@@ -1,0 +1,13 @@
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+const express_1 = require("express");
+const batches_controller_1 = require("./batches.controller");
+const auth_middleware_1 = require("../../middlewares/auth.middleware");
+const role_middleware_1 = require("../../middlewares/role.middleware");
+const router = (0, express_1.Router)();
+router.use(auth_middleware_1.authenticate);
+router.post('/', (0, role_middleware_1.authorize)('admin', 'provider_admin'), batches_controller_1.BatchesController.create);
+router.get('/', batches_controller_1.BatchesController.list);
+router.get('/:id', batches_controller_1.BatchesController.getById);
+router.put('/:id', (0, role_middleware_1.authorize)('admin', 'provider_admin'), batches_controller_1.BatchesController.update);
+exports.default = router;

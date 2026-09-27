@@ -1,0 +1,1 @@
+import api from './api'; export const getCommandCenter=(params={})=>api.get('/admin/dashboard',{params}); export const getAnomalies=()=>api.get('/admin/anomalies'); export const reviewAnomaly=(id:string,payload:any)=>api.patch(`/admin/anomalies/${id}`,payload);

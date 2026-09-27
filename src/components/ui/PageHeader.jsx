@@ -1,0 +1,1 @@
+export default function PageHeader({eyebrow,title,sub,action}){return <div className="pageHead"><div><div className="eyebrow">{eyebrow}</div><h1>{title}</h1><p>{sub}</p></div>{action}</div>}

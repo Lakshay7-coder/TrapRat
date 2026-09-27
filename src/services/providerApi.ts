@@ -1,0 +1,1 @@
+import api from './api'; export const getProviderDashboard=()=>api.get('/providers/dashboard'); export const getProviders=()=>api.get('/providers');

@@ -1,0 +1,13 @@
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+const express_1 = require("express");
+const courses_controller_1 = require("./courses.controller");
+const auth_middleware_1 = require("../../middlewares/auth.middleware");
+const role_middleware_1 = require("../../middlewares/role.middleware");
+const router = (0, express_1.Router)();
+router.use(auth_middleware_1.authenticate);
+router.post('/', (0, role_middleware_1.authorize)('admin', 'provider_admin'), courses_controller_1.CoursesController.create);
+router.get('/', courses_controller_1.CoursesController.list);
+router.get('/:id', courses_controller_1.CoursesController.getById);
+router.put('/:id', (0, role_middleware_1.authorize)('admin', 'provider_admin'), courses_controller_1.CoursesController.update);
+exports.default = router;

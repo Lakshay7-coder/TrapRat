@@ -1,0 +1,1 @@
+import api from './api'; export const getDocuments=(params={})=>api.get('/documents',{params}); export const verifyDocument=(id:string)=>api.post(`/documents/${id}/verify`);

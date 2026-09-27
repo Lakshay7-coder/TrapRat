@@ -1,0 +1,1 @@
+export const employerFeature = { name: 'employer' };

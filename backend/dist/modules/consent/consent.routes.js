@@ -1,0 +1,11 @@
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+const express_1 = require("express");
+const consent_controller_1 = require("./consent.controller");
+const auth_middleware_1 = require("../../middlewares/auth.middleware");
+const router = (0, express_1.Router)();
+router.use(auth_middleware_1.authenticate);
+router.get('/', consent_controller_1.ConsentController.getActive);
+router.post('/', consent_controller_1.ConsentController.update);
+router.get('/history', consent_controller_1.ConsentController.getHistory);
+exports.default = router;

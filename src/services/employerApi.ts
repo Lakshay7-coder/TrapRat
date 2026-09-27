@@ -1,0 +1,1 @@
+import api from './api'; export const getVerificationRequest=(token:string)=>api.get(`/employer/verify/${token}`); export const confirmEmployment=(token:string,payload:any)=>api.post(`/employer/verify/${token}`,payload);

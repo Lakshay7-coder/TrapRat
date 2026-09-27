@@ -1,0 +1,1 @@
+import api from './api'; export const login=(payload:any)=>api.post('/auth/login',payload); export const me=()=>api.get('/auth/me'); export const logout=()=>api.post('/auth/logout');

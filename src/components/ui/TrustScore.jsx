@@ -1,0 +1,1 @@
+import React from "react"; export default function TrustScore({value}){return <div className="trust"><div className="trustRing" style={{"--p":`${value*3.6}deg`}}><strong>{value}</strong><span>/100</span></div><div><b>Outcome Trust Score</b><small>Evidence confidence</small></div></div>}

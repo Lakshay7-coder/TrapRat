@@ -1,0 +1,1 @@
+import api from './api'; export const getFollowups=(params={})=>api.get('/followups',{params}); export const completeFollowup=(id:string,payload:any)=>api.post(`/followups/${id}/complete`,payload);

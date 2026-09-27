@@ -1,0 +1,1 @@
+export default function RegisterPage(){return <div className="simplePage"><h1>Register</h1><p>Demo registration is available from the trainee workflow.</p></div>}

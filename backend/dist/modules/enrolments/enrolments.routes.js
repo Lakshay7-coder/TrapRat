@@ -1,0 +1,15 @@
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+const express_1 = require("express");
+const enrolments_controller_1 = require("./enrolments.controller");
+const auth_middleware_1 = require("../../middlewares/auth.middleware");
+const role_middleware_1 = require("../../middlewares/role.middleware");
+const router = (0, express_1.Router)();
+router.use(auth_middleware_1.authenticate);
+router.post('/', (0, role_middleware_1.authorize)('admin', 'provider_admin', 'provider_staff'), enrolments_controller_1.EnrolmentsController.create);
+router.get('/', enrolments_controller_1.EnrolmentsController.list);
+router.get('/:id', enrolments_controller_1.EnrolmentsController.getById);
+router.put('/:id', (0, role_middleware_1.authorize)('admin', 'provider_admin', 'provider_staff'), enrolments_controller_1.EnrolmentsController.update);
+router.post('/:id/complete', (0, role_middleware_1.authorize)('admin', 'provider_admin', 'provider_staff'), enrolments_controller_1.EnrolmentsController.complete);
+router.post('/bulk-import', (0, role_middleware_1.authorize)('admin', 'provider_admin'), enrolments_controller_1.EnrolmentsController.bulkImport);
+exports.default = router;

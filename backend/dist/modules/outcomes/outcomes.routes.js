@@ -1,0 +1,15 @@
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+const express_1 = require("express");
+const outcomes_controller_1 = require("./outcomes.controller");
+const auth_middleware_1 = require("../../middlewares/auth.middleware");
+const role_middleware_1 = require("../../middlewares/role.middleware");
+const router = (0, express_1.Router)();
+router.use(auth_middleware_1.authenticate);
+router.post('/', (0, role_middleware_1.authorize)('admin', 'provider_admin', 'provider_staff', 'trainee'), outcomes_controller_1.OutcomesController.create);
+router.get('/', outcomes_controller_1.OutcomesController.list);
+router.get('/:id', outcomes_controller_1.OutcomesController.getById);
+router.post('/:id/verify', (0, role_middleware_1.authorize)('admin', 'provider_admin', 'field_officer'), outcomes_controller_1.OutcomesController.verify);
+router.post('/:id/recalculate-trust-score', (0, role_middleware_1.authorize)('admin', 'provider_admin'), outcomes_controller_1.OutcomesController.recalculate);
+router.post('/:id/reasons', outcomes_controller_1.OutcomesController.recordReason);
+exports.default = router;

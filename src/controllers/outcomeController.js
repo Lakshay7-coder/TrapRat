@@ -1,0 +1,1 @@
+export const outcomeColor=o=>o==="Employed"?"positive":o==="Seeking work"?"warning":"neutral";

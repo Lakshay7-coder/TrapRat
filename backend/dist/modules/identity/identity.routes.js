@@ -1,0 +1,12 @@
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+const express_1 = require("express");
+const identity_controller_1 = require("./identity.controller");
+const auth_middleware_1 = require("../../middlewares/auth.middleware");
+const role_middleware_1 = require("../../middlewares/role.middleware");
+const router = (0, express_1.Router)();
+router.use(auth_middleware_1.authenticate);
+router.post('/link-candidates', (0, role_middleware_1.authorize)('admin', 'provider_admin'), identity_controller_1.IdentityController.linkCandidates);
+router.get('/review-queue', (0, role_middleware_1.authorize)('admin', 'provider_admin'), identity_controller_1.IdentityController.reviewQueue);
+router.post('/:id/resolve', (0, role_middleware_1.authorize)('admin', 'provider_admin'), identity_controller_1.IdentityController.resolve);
+exports.default = router;

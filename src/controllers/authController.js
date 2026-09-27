@@ -1,0 +1,1 @@
+export const roleLabel=r=>({admin:"Scheme Administrator",provider:"Training Provider",field:"Field Officer",employer:"Employer",trainee:"Trainee"}[r]||r);

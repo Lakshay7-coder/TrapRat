@@ -1,0 +1,1 @@
+import api from './api'; export const getTrainees=(params={})=>api.get('/trainees',{params}); export const getTrainee=(id:string)=>api.get(`/trainees/${id}`);

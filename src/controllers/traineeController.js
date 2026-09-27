@@ -1,0 +1,1 @@
+export function searchTrainees(trainees,q){const s=q.toLowerCase();return trainees.filter(t=>[t.name,t.id,t.course,t.provider,t.district].some(v=>v.toLowerCase().includes(s)))}

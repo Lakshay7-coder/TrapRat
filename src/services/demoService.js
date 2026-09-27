@@ -1,0 +1,1 @@
+export const demoService={delay:(ms=300)=>new Promise(r=>setTimeout(r,ms)),verify:async(id)=>{await demoService.delay();return {ok:true,id}}};

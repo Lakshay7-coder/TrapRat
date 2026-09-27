@@ -1,0 +1,1 @@
+import React from "react"; export default function StatCard({label,value,sub,icon:Icon,accent}){return <div className="statCard"><div className={"statIcon "+(accent||"")}><Icon size={20}/></div><div><span>{label}</span><b>{value}</b><small>{sub}</small></div></div>}

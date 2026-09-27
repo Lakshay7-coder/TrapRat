@@ -1,0 +1,1 @@
+export const createEvidenceRef=()=>`EV-${Date.now().toString(36).toUpperCase()}`;

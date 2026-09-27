@@ -1,0 +1,1 @@
+import api from './api'; export const getOutcomes=(params={})=>api.get('/outcomes',{params}); export const updateOutcome=(id:string,payload:any)=>api.patch(`/outcomes/${id}`,payload);

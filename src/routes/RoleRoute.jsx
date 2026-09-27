@@ -1,0 +1,2 @@
+import React from "react"; import {Navigate,Outlet} from "react-router-dom"; import {useAuth} from "../context/AuthContext";
+export default function RoleRoute({allow,children}){const {role}=useAuth();return allow.includes(role)?children||<Outlet/>:<Navigate to="/dashboard" replace/>}

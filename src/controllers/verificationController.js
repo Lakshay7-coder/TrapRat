@@ -1,0 +1,1 @@
+export async function verifyOutcome(verify,id){await verify(id);return true}

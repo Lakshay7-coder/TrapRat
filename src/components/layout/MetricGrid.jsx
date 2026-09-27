@@ -1,0 +1,1 @@
+export default function MetricGrid({children}){return <div className="metricGrid">{children}</div>}

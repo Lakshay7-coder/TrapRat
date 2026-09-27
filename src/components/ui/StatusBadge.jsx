@@ -1,0 +1,1 @@
+export default function StatusBadge({children,type="neutral"}){return <span className={"badge "+type}>{children}</span>}

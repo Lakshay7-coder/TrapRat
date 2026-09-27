@@ -1,0 +1,1 @@
+export const anomalyReason=t=>t.anomaly?"Pattern similarity / verification spike":"No active anomaly";

@@ -1,0 +1,1 @@
+export function getDashboardMetrics(data){return data.metrics}
